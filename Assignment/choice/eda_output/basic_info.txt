@@ -1,0 +1,5 @@
+shape: (307511, 122)
+rows: 307511
+columns: 122
+duplicates: 0
+memory_mb: 504.99

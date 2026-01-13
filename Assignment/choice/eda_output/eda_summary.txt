@@ -1,0 +1,12 @@
+Dataset: application_train.csv
+Shape: (307511, 122)
+Duplicate rows: 0
+Columns with missing values: 67
+Columns with >= 50% missing: 41
+Constant columns: 0
+ID-like columns: 1
+High-cardinality categorical columns: 1
+Columns with infinite values: 0
+Numeric columns (excluded ID/TARGET): 104
+Categorical columns: 16
+Target present: True

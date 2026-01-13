@@ -1,0 +1,26 @@
+{
+    "n_rows": 307511,
+    "n_cols": 126,
+    "target_prevalence": 0.08072881945686496,
+    "top_missing_cols": [
+        "COMMONAREA_MEDI",
+        "COMMONAREA_AVG",
+        "COMMONAREA_MODE",
+        "NONLIVINGAPARTMENTS_MODE",
+        "NONLIVINGAPARTMENTS_AVG"
+    ],
+    "top_numeric_signals": [
+        "EXT_SOURCE_3",
+        "EXT_SOURCE_1",
+        "EXT_SOURCE_2",
+        "OWN_CAR_AGE",
+        "FLOORSMAX_AVG"
+    ],
+    "top_categorical_signals": [
+        "OCCUPATION_TYPE",
+        "ORGANIZATION_TYPE",
+        "NAME_EDUCATION_TYPE",
+        "NAME_HOUSING_TYPE",
+        "WALLSMATERIAL_MODE"
+    ]
+}
