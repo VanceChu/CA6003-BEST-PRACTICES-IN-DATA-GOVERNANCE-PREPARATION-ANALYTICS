@@ -14,22 +14,11 @@ lightgbm_pipeline/
 │   └── lightgbm_pipeline_notebook_executed.ipynb # Executed notebook with outputs
 ├── scripts/
 │   └── lightgbm_with_simple_features.py          # Original Python script
-├── outputs/
-│   ├── predictions/
-│   │   └── submission_kernel02.csv               # Kaggle submission file
-│   ├── visualizations/
-│   │   ├── lgbm_importances01.png                # Feature importance plot
-│   │   ├── roc_curve.png                         # Combined ROC curve (OOF)
-│   │   ├── roc_curves_per_fold.png               # Per-fold ROC curves
-│   │   └── training_curves.png                   # Training curves (AUC vs iterations)
-│   └── logs/
-│       ├── training_log.txt                      # Formatted training log
-│       ├── training_log_full.txt                 # Full training log
-│       ├── fold_results.csv                      # Per-fold AUC results
-│       └── training_iterations.csv               # Detailed iteration metrics
 └── models/                                       # Saved models (generated after training)
     ├── lgbm_fold_0.txt ~ lgbm_fold_9.txt        # 10 fold models (LightGBM native format)
     └── feature_list.pkl                          # Feature list for inference
+
+**Note**: All output files (predictions, visualizations, logs) are automatically suffixed with a timestamp (e.g., `_20260117_232817`) to prevent overwriting.
 ```
 
 ## Usage
@@ -55,8 +44,10 @@ DEBUG = False       # True: use 10000 rows for quick testing
 
 1. Loads all data and performs feature engineering
 2. Loads pre-trained models from `models/` directory
-3. Generates predictions (no retraining)
-4. **Time**: ~5-10 minutes (feature engineering only)
+3. **Performs OOF Evaluation**: Recreates validation splits to calculate AUC and OOF scores
+4. **Generates Visualizations**: Creates ROC curves and feature importance plots
+5. **Generates Predictions**: Creates submission file for test set
+6. **Time**: ~5-10 minutes
 
 ## Results
 

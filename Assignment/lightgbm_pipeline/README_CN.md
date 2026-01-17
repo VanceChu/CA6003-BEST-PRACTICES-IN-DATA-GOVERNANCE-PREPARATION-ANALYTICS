@@ -15,22 +15,11 @@ lightgbm_pipeline/
 │   └── lightgbm_pipeline_notebook_executed.ipynb # 已运行的 Notebook (包含输出结果)
 ├── scripts/
 │   └── lightgbm_with_simple_features.py          # 原始 Python 脚本
-├── outputs/
-│   ├── predictions/
-│   │   └── submission_kernel02.csv               # Kaggle 提交文件
-│   ├── visualizations/
-│   │   ├── lgbm_importances01.png                # 特征重要性图表
-│   │   ├── roc_curve.png                         # 综合 ROC 曲线 (OOF)
-│   │   ├── roc_curves_per_fold.png               # 每折 (Feature) 的 ROC 曲线
-│   │   └── training_curves.png                   # 训练过程曲线 (AUC vs 迭代次数)
-│   └── logs/
-│       ├── training_log.txt                      # 格式化的训练日志
-│       ├── training_log_full.txt                 # 完整训练日志
-│       ├── fold_results.csv                      # 每折 AUC 结果
-│       └── training_iterations.csv               # 详细迭代指标
 └── models/                                       # 保存的模型 (训练后生成)
     ├── lgbm_fold_0.txt ~ lgbm_fold_9.txt        # 10 折模型文件 (LightGBM 原生格式)
     └── feature_list.pkl                          # 推理用的特征列表
+
+**注意**: 所有输出文件 (提交结果、图表、日志) 都会自动添加时间戳后缀 (例如 `_20260117_232817`) 防止覆盖。
 ```
 
 ## 使用方法 (Usage)
@@ -56,8 +45,10 @@ DEBUG = False       # True: 使用 10000 行数据快速测试
 
 1. 加载所有数据并执行特征工程
 2. 从 `models/` 目录加载预训练模型
-3. 生成预测结果 (无需重新训练)
-4. **耗时**: 约 5-10 分钟 (仅需特征工程时间)
+3. **执行 OOF 评估**: 重现验证集划分，计算 AUC 和 OOF 得分
+4. **生成可视化**: 绘制 ROC 曲线和特征重要性图表
+5. **生成预测结果**: 生成测试集的提交文件
+6. **耗时**: 约 5-10 分钟
 
 ## 结果 (Results)
 
