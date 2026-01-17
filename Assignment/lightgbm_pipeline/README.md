@@ -1,5 +1,7 @@
 # LightGBM Pipeline for Home Credit Default Risk
 
+[English](README.md) | [中文](README_CN.md)
+
 This project implements a complete machine learning pipeline for the [Home Credit Default Risk](https://www.kaggle.com/c/home-credit-default-risk) Kaggle competition.
 
 ## Project Structure
