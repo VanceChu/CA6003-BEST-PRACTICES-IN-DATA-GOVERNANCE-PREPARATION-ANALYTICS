@@ -13,7 +13,10 @@ home-credit-default-risk/
 
 # Generated Outputs with Timestamps (Logs, CSVs, PNGs)
 # Note: Keep non-timestamped files (e.g., final results) tracked if needed
+# Explicitly ignore the non-timestamped submission file to avoid churn
+outputs/predictions/submission_kernel02.csv
 outputs/predictions/*_*.csv
+outputs/*.csv
 outputs/visualizations/*_*.png
 outputs/logs/*_*.csv
 outputs/logs/*.log
