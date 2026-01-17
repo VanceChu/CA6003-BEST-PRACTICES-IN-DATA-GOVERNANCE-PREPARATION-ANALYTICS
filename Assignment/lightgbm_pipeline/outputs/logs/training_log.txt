@@ -1,0 +1,331 @@
+================================================================================
+LightGBM Pipeline Training Log
+================================================================================
+
+
+------------------------------------------------------------
+[Cell 2] Stage 1: Data Loading
+------------------------------------------------------------
+Loading all datasets - done in 16s
+Train samples: 307511, Test samples: 48744
+Bureau records: 1716428, Bureau balance records: 27299925
+Previous applications: 1670214
+POS cash balance: 10001358
+Installments payments: 13605401
+Credit card balance: 3840312
+
+
+------------------------------------------------------------
+[Cell 3] Stage 2: Data Preprocessing
+------------------------------------------------------------
+Preprocessing application data - done in 1s
+
+Preprocessing bureau and bureau_balance - done in 1s
+
+Preprocessing previous applications - done in 1s
+
+Preprocessing other tables - done in 2s
+Preprocessed main df shape: (356251, 242)
+
+
+------------------------------------------------------------
+[Cell 4] Stage 3: Feature Engineering
+------------------------------------------------------------
+Creating application features - done in 0s
+
+After bureau features: (356251, 363)
+Creating bureau features - done in 4s
+
+After previous application features: (356251, 612)
+Creating previous application features - done in 5s
+
+After POS cash features: (356251, 630)
+Creating POS cash features - done in 2s
+
+After installments features: (356251, 656)
+Creating installments features - done in 7s
+
+Creating credit card features - done in 3s
+Final df shape after all features: (356251, 757)
+
+
+------------------------------------------------------------
+[Cell 5] Stage 4: Model Training
+------------------------------------------------------------
+Starting LightGBM. Train shape: (307507, 757), Test shape: (48744, 757)
+Number of features: 755
+
+Training until validation scores don't improve for 200 rounds
+
+[200]	train's auc: 0.796961	train's binary_logloss: 0.234878	valid's auc: 0.776101	valid's binary_logloss: 0.246826
+
+[400]	train's auc: 0.819374	train's binary_logloss: 0.225345	valid's auc: 0.786946	valid's binary_logloss: 0.242658
+
+[600]	train's auc: 0.83398	train's binary_logloss: 0.219334	valid's auc: 0.790771	valid's binary_logloss: 0.241304
+
+[800]	train's auc: 0.84613	train's binary_logloss: 0.214358	valid's auc: 0.792736	valid's binary_logloss: 0.240667
+
+[1000]	train's auc: 0.85698	train's binary_logloss: 0.209763	valid's auc: 0.794077	valid's binary_logloss: 0.240208
+
+[1200]	train's auc: 0.866576	train's binary_logloss: 0.205612	valid's auc: 0.794517	valid's binary_logloss: 0.240045
+
+[1400]	train's auc: 0.875812	train's binary_logloss: 0.20151	valid's auc: 0.794884	valid's binary_logloss: 0.239946
+
+Early stopping, best iteration is:
+[1350]	train's auc: 0.873479	train's binary_logloss: 0.202541	valid's auc: 0.795044	valid's binary_logloss: 0.239899
+
+Fold  1 AUC : 0.795044
+
+Training until validation scores don't improve for 200 rounds
+
+[200]	train's auc: 0.796619	train's binary_logloss: 0.235563	valid's auc: 0.777538	valid's binary_logloss: 0.241618
+
+[400]	train's auc: 0.81929	train's binary_logloss: 0.226004	valid's auc: 0.786998	valid's binary_logloss: 0.237347
+
+[600]	train's auc: 0.834277	train's binary_logloss: 0.219903	valid's auc: 0.788928	valid's binary_logloss: 0.236361
+
+[800]	train's auc: 0.84655	train's binary_logloss: 0.214846	valid's auc: 0.790282	valid's binary_logloss: 0.235835
+
+[1000]	train's auc: 0.856788	train's binary_logloss: 0.210522	valid's auc: 0.790867	valid's binary_logloss: 0.235575
+
+[1200]	train's auc: 0.865945	train's binary_logloss: 0.206517	valid's auc: 0.791196	valid's binary_logloss: 0.235383
+
+[1400]	train's auc: 0.87497	train's binary_logloss: 0.202453	valid's auc: 0.791195	valid's binary_logloss: 0.235311
+
+Early stopping, best iteration is:
+[1296]	train's auc: 0.870329	train's binary_logloss: 0.20458	valid's auc: 0.79131	valid's binary_logloss: 0.235314
+
+Fold  2 AUC : 0.791310
+
+Training until validation scores don't improve for 200 rounds
+
+[200]	train's auc: 0.797203	train's binary_logloss: 0.234985	valid's auc: 0.767879	valid's binary_logloss: 0.246474
+
+[400]	train's auc: 0.819932	train's binary_logloss: 0.225429	valid's auc: 0.778204	valid's binary_logloss: 0.242613
+
+[600]	train's auc: 0.834858	train's binary_logloss: 0.219304	valid's auc: 0.781605	valid's binary_logloss: 0.241524
+
+[800]	train's auc: 0.84705	train's binary_logloss: 0.214282	valid's auc: 0.783683	valid's binary_logloss: 0.240943
+
+[1000]	train's auc: 0.857216	train's binary_logloss: 0.209945	valid's auc: 0.784333	valid's binary_logloss: 0.240759
+
+[1200]	train's auc: 0.866638	train's binary_logloss: 0.205848	valid's auc: 0.78489	valid's binary_logloss: 0.240659
+
+[1400]	train's auc: 0.875299	train's binary_logloss: 0.201906	valid's auc: 0.785202	valid's binary_logloss: 0.240611
+
+Early stopping, best iteration is:
+[1371]	train's auc: 0.874097	train's binary_logloss: 0.202479	valid's auc: 0.78526	valid's binary_logloss: 0.240585
+
+Fold  3 AUC : 0.785260
+
+Training until validation scores don't improve for 200 rounds
+
+[200]	train's auc: 0.796582	train's binary_logloss: 0.235544	valid's auc: 0.778473	valid's binary_logloss: 0.241216
+
+[400]	train's auc: 0.819068	train's binary_logloss: 0.226008	valid's auc: 0.788764	valid's binary_logloss: 0.236945
+
+[600]	train's auc: 0.833938	train's binary_logloss: 0.219946	valid's auc: 0.792446	valid's binary_logloss: 0.235525
+
+[800]	train's auc: 0.84613	train's binary_logloss: 0.214973	valid's auc: 0.793923	valid's binary_logloss: 0.234941
+
+[1000]	train's auc: 0.856677	train's binary_logloss: 0.210544	valid's auc: 0.794942	valid's binary_logloss: 0.234574
+
+[1200]	train's auc: 0.866153	train's binary_logloss: 0.206469	valid's auc: 0.79553	valid's binary_logloss: 0.234329
+
+[1400]	train's auc: 0.875195	train's binary_logloss: 0.202405	valid's auc: 0.795691	valid's binary_logloss: 0.234246
+
+[1600]	train's auc: 0.883336	train's binary_logloss: 0.198623	valid's auc: 0.795937	valid's binary_logloss: 0.234144
+
+[1800]	train's auc: 0.890948	train's binary_logloss: 0.19497	valid's auc: 0.796022	valid's binary_logloss: 0.234104
+
+[2000]	train's auc: 0.897845	train's binary_logloss: 0.191517	valid's auc: 0.795782	valid's binary_logloss: 0.23422
+
+Early stopping, best iteration is:
+[1825]	train's auc: 0.891759	train's binary_logloss: 0.194566	valid's auc: 0.796099	valid's binary_logloss: 0.234081
+
+Fold  4 AUC : 0.796099
+
+Training until validation scores don't improve for 200 rounds
+
+[200]	train's auc: 0.796081	train's binary_logloss: 0.236416	valid's auc: 0.77971	valid's binary_logloss: 0.234245
+
+[400]	train's auc: 0.818758	train's binary_logloss: 0.226832	valid's auc: 0.790146	valid's binary_logloss: 0.229877
+
+[600]	train's auc: 0.833917	train's binary_logloss: 0.220631	valid's auc: 0.793439	valid's binary_logloss: 0.228563
+
+[800]	train's auc: 0.845983	train's binary_logloss: 0.215668	valid's auc: 0.795156	valid's binary_logloss: 0.227876
+
+[1000]	train's auc: 0.856538	train's binary_logloss: 0.211204	valid's auc: 0.79595	valid's binary_logloss: 0.227558
+
+[1200]	train's auc: 0.866152	train's binary_logloss: 0.207029	valid's auc: 0.796463	valid's binary_logloss: 0.22738
+
+[1400]	train's auc: 0.875073	train's binary_logloss: 0.202957	valid's auc: 0.796614	valid's binary_logloss: 0.227303
+
+[1600]	train's auc: 0.882666	train's binary_logloss: 0.199363	valid's auc: 0.796578	valid's binary_logloss: 0.227272
+Early stopping, best iteration is:
+[1402]	train's auc: 0.875178	train's binary_logloss: 0.202906	valid's auc: 0.796631	valid's binary_logloss: 0.227297
+
+Fold  5 AUC : 0.796631
+
+Training until validation scores don't improve for 200 rounds
+
+[200]	train's auc: 0.797375	train's binary_logloss: 0.23534	valid's auc: 0.766953	valid's binary_logloss: 0.243359
+
+[400]	train's auc: 0.819929	train's binary_logloss: 0.225765	valid's auc: 0.777687	valid's binary_logloss: 0.239517
+
+[600]	train's auc: 0.835071	train's binary_logloss: 0.219602	valid's auc: 0.781896	valid's binary_logloss: 0.23811
+
+[800]	train's auc: 0.846961	train's binary_logloss: 0.214697	valid's auc: 0.783683	valid's binary_logloss: 0.237458
+
+[1000]	train's auc: 0.857483	train's binary_logloss: 0.210232	valid's auc: 0.784412	valid's binary_logloss: 0.237197
+
+[1200]	train's auc: 0.867042	train's binary_logloss: 0.206025	valid's auc: 0.784948	valid's binary_logloss: 0.23707
+
+[1400]	train's auc: 0.875674	train's binary_logloss: 0.202086	valid's auc: 0.785125	valid's binary_logloss: 0.237014
+
+Early stopping, best iteration is:
+[1365]	train's auc: 0.874348	train's binary_logloss: 0.202696	valid's auc: 0.785199	valid's binary_logloss: 0.236968
+
+Fold  6 AUC : 0.785199
+
+Training until validation scores don't improve for 200 rounds
+
+[200]	train's auc: 0.797036	train's binary_logloss: 0.235544	valid's auc: 0.77483	valid's binary_logloss: 0.240546
+
+[400]	train's auc: 0.819526	train's binary_logloss: 0.225998	valid's auc: 0.784714	valid's binary_logloss: 0.236374
+
+[600]	train's auc: 0.834539	train's binary_logloss: 0.219857	valid's auc: 0.787708	valid's binary_logloss: 0.235194
+
+[800]	train's auc: 0.846621	train's binary_logloss: 0.214935	valid's auc: 0.789117	valid's binary_logloss: 0.234696
+
+[1000]	train's auc: 0.857169	train's binary_logloss: 0.210537	valid's auc: 0.789661	valid's binary_logloss: 0.234502
+
+[1200]	train's auc: 0.866495	train's binary_logloss: 0.206485	valid's auc: 0.790196	valid's binary_logloss: 0.234332
+
+[1400]	train's auc: 0.875452	train's binary_logloss: 0.202436	valid's auc: 0.790542	valid's binary_logloss: 0.234254
+
+[1600]	train's auc: 0.88338	train's binary_logloss: 0.198686	valid's auc: 0.790704	valid's binary_logloss: 0.234252
+
+Early stopping, best iteration is:
+[1443]	train's auc: 0.87716	train's binary_logloss: 0.201628	valid's auc: 0.790664	valid's binary_logloss: 0.23422
+
+Fold  7 AUC : 0.790664
+
+Training until validation scores don't improve for 200 rounds
+
+[200]	train's auc: 0.797109	train's binary_logloss: 0.235147	valid's auc: 0.769481	valid's binary_logloss: 0.245626
+
+[400]	train's auc: 0.81955	train's binary_logloss: 0.225568	valid's auc: 0.781	valid's binary_logloss: 0.241301
+
+[600]	train's auc: 0.834444	train's binary_logloss: 0.21943	valid's auc: 0.785212	valid's binary_logloss: 0.23988
+
+[800]	train's auc: 0.846076	train's binary_logloss: 0.214637	valid's auc: 0.787302	valid's binary_logloss: 0.239244
+
+[1000]	train's auc: 0.856704	train's binary_logloss: 0.210235	valid's auc: 0.788506	valid's binary_logloss: 0.23888
+
+[1200]	train's auc: 0.866288	train's binary_logloss: 0.206045	valid's auc: 0.788828	valid's binary_logloss: 0.238787
+
+[1400]	train's auc: 0.874867	train's binary_logloss: 0.202148	valid's auc: 0.78895	valid's binary_logloss: 0.23873
+
+[1600]	train's auc: 0.882839	train's binary_logloss: 0.198416	valid's auc: 0.789269	valid's binary_logloss: 0.238597
+
+[1800]	train's auc: 0.89042	train's binary_logloss: 0.194741	valid's auc: 0.789408	valid's binary_logloss: 0.238539
+
+[2000]	train's auc: 0.897342	train's binary_logloss: 0.191296	valid's auc: 0.789373	valid's binary_logloss: 0.238597
+
+Early stopping, best iteration is:
+[1883]	train's auc: 0.893462	train's binary_logloss: 0.193234	valid's auc: 0.789533	valid's binary_logloss: 0.238523
+
+Fold  8 AUC : 0.789533
+
+Training until validation scores don't improve for 200 rounds
+
+[200]	train's auc: 0.79611	train's binary_logloss: 0.235504	valid's auc: 0.78031	valid's binary_logloss: 0.242564
+
+[400]	train's auc: 0.819077	train's binary_logloss: 0.225886	valid's auc: 0.789959	valid's binary_logloss: 0.238216
+
+[600]	train's auc: 0.834544	train's binary_logloss: 0.219604	valid's auc: 0.793435	valid's binary_logloss: 0.236806
+
+[800]	train's auc: 0.84677	train's binary_logloss: 0.214614	valid's auc: 0.794689	valid's binary_logloss: 0.236204
+
+[1000]	train's auc: 0.857678	train's binary_logloss: 0.210068	valid's auc: 0.795043	valid's binary_logloss: 0.235961
+
+[1200]	train's auc: 0.867421	train's binary_logloss: 0.205809	valid's auc: 0.795749	valid's binary_logloss: 0.235757
+
+[1400]	train's auc: 0.876327	train's binary_logloss: 0.201809	valid's auc: 0.79621	valid's binary_logloss: 0.23559
+
+[1600]	train's auc: 0.884409	train's binary_logloss: 0.198065	valid's auc: 0.796254	valid's binary_logloss: 0.235579
+
+Early stopping, best iteration is:
+[1548]	train's auc: 0.882284	train's binary_logloss: 0.199045	valid's auc: 0.796374	valid's binary_logloss: 0.235542
+
+Fold  9 AUC : 0.796374
+
+Training until validation scores don't improve for 200 rounds
+
+[200]	train's auc: 0.796816	train's binary_logloss: 0.235645	valid's auc: 0.771423	valid's binary_logloss: 0.240904
+
+[400]	train's auc: 0.819408	train's binary_logloss: 0.226121	valid's auc: 0.782375	valid's binary_logloss: 0.236637
+
+[600]	train's auc: 0.834519	train's binary_logloss: 0.219944	valid's auc: 0.786336	valid's binary_logloss: 0.235187
+
+[800]	train's auc: 0.846653	train's binary_logloss: 0.214951	valid's auc: 0.787862	valid's binary_logloss: 0.234572
+
+[1000]	train's auc: 0.857177	train's binary_logloss: 0.210487	valid's auc: 0.789206	valid's binary_logloss: 0.234155
+
+[1200]	train's auc: 0.866943	train's binary_logloss: 0.206237	valid's auc: 0.789968	valid's binary_logloss: 0.233888
+
+[1400]	train's auc: 0.875529	train's binary_logloss: 0.202351	valid's auc: 0.790039	valid's binary_logloss: 0.23381
+
+[1600]	train's auc: 0.883596	train's binary_logloss: 0.198557	valid's auc: 0.790241	valid's binary_logloss: 0.233727
+
+Early stopping, best iteration is:
+[1512]	train's auc: 0.880184	train's binary_logloss: 0.200198	valid's auc: 0.79039	valid's binary_logloss: 0.233706
+
+Fold 10 AUC : 0.790390
+Full AUC score: 0.791629
+Training LightGBM with 10-Fold - done in 1888s
+
+
+------------------------------------------------------------
+[Cell 6] Stage 5: Output & Visualization
+------------------------------------------------------------
+Submission saved to: submission_kernel02.csv
+Submission shape: (48744, 2)
+Saving submission file - done in 0s
+
+Generating feature importance - done in 1s
+
+Generating per-fold ROC curves - done in 1s
+
+Generating combined ROC curve - done in 0s
+
+Generating training curves - done in 1s
+
+============================================================
+TRAINING SUMMARY
+============================================================
+Number of folds: 10
+Features used: 755
+
+Per-Fold AUC:
+  Fold  1: 0.795044
+  Fold  2: 0.791310
+  Fold  3: 0.785260
+  Fold  4: 0.796099
+  Fold  5: 0.796631
+  Fold  6: 0.785199
+  Fold  7: 0.790664
+  Fold  8: 0.789533
+  Fold  9: 0.796374
+  Fold 10: 0.790390
+
+Mean Fold AUC: 0.791650
+OOF AUC:       0.791629
+
+Output files:
+  - submission_kernel02.csv
+  - lgbm_importances01.png
+  - roc_curves_per_fold.png
+  - roc_curve.png
+  - training_curves.png

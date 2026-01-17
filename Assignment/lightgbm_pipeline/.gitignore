@@ -1,0 +1,15 @@
+# Data files (too large for git)
+home-credit-default-risk/
+
+# Model files (can be regenerated)
+# lightgbm_pipeline/models/*.pkl
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Mac system files
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
