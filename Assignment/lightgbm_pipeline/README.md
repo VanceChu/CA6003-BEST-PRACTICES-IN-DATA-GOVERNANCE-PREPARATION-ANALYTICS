@@ -28,7 +28,7 @@ lightgbm_pipeline/
 │       ├── fold_results.csv                      # Per-fold AUC results
 │       └── training_iterations.csv               # Detailed iteration metrics
 └── models/                                       # Saved models (generated after training)
-    ├── lgbm_fold_0.pkl ~ lgbm_fold_9.pkl        # 10 fold models
+    ├── lgbm_fold_0.txt ~ lgbm_fold_9.txt        # 10 fold models (LightGBM native format)
     └── feature_list.pkl                          # Feature list for inference
 ```
 

@@ -29,7 +29,7 @@ lightgbm_pipeline/
 │       ├── fold_results.csv                      # 每折 AUC 结果
 │       └── training_iterations.csv               # 详细迭代指标
 └── models/                                       # 保存的模型 (训练后生成)
-    ├── lgbm_fold_0.pkl ~ lgbm_fold_9.pkl        # 10 折模型文件
+    ├── lgbm_fold_0.txt ~ lgbm_fold_9.txt        # 10 折模型文件 (LightGBM 原生格式)
     └── feature_list.pkl                          # 推理用的特征列表
 ```
 
