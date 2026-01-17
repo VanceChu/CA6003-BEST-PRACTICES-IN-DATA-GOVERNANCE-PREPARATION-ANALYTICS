@@ -209,3 +209,14 @@ __marimo__/
 # Custom
 Assignment/choice/application_train.csv
 .DS_Store
+
+# =============================================================================
+# Project-specific ignores
+# =============================================================================
+
+# Large Kaggle competition datasets (~2.5GB) - too large for version control
+# Download from: https://www.kaggle.com/c/home-credit-default-risk/data
+Assignment/home-credit-default-risk/
+
+# Codex-generated EDA analysis files (temporary exploratory work)
+analysis_codex/
