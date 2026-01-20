@@ -17,6 +17,8 @@ home-credit-default-risk/
 outputs/predictions/submission_kernel02.csv
 outputs/predictions/*_*.csv
 outputs/*.csv
+# Local comparison summaries (not needed for version control)
+outputs/comparisons/*.csv
 outputs/visualizations/*_*.png
 outputs/logs/*_*.csv
 outputs/logs/*.log

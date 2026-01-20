@@ -220,3 +220,6 @@ Assignment/home-credit-default-risk/
 
 # Codex-generated EDA analysis files (temporary exploratory work)
 analysis_codex/
+
+# Temporary share archive for the lightgbm pipeline
+Assignment/lightgbm_pipeline.zip
